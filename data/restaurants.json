@@ -1,0 +1,345 @@
+{
+  "restaurants": [
+    {
+      "id": "rest_001",
+      "name": "Ocho Rios Caribbean",
+      "cuisine": "Caribbean",
+      "neighborhood": "South Keys",
+      "address": "1711 Bank St, Ottawa, ON",
+      "website": "https://www.ochorioscaribbean.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_002",
+      "name": "Island Grill Restaurant",
+      "cuisine": "Caribbean",
+      "neighborhood": "Orleans",
+      "address": "2010 Trim Rd, Ottawa, ON",
+      "website": "https://www.islandgrillrestaurant.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_003",
+      "name": "Suyapa Palace",
+      "cuisine": "Honduran",
+      "neighborhood": "Vanier",
+      "address": "117 Montreal Rd, Ottawa, ON",
+      "website": "https://www.suyapalace.com",
+      "priceRange": "$–$$",
+      "alcohol": "Beer",
+      "patio": "Small / seasonal"
+    },
+    {
+      "id": "rest_004",
+      "name": "EVOO Greek Kitchen",
+      "cuisine": "Greek",
+      "neighborhood": "Little Italy",
+      "address": "438 Preston St, Ottawa, ON",
+      "website": "https://www.evoogreekkitchen.ca",
+      "priceRange": "$$–$$$",
+      "alcohol": "Full bar",
+      "patio": "Large / seasonal"
+    },
+    {
+      "id": "rest_005",
+      "name": "Greek Village Souvlaki",
+      "cuisine": "Greek",
+      "neighborhood": "Barrhaven",
+      "address": "1581 Greenbank Rd, Ottawa, ON",
+      "website": "https://www.greekvillagesouvlaki.ca",
+      "priceRange": "$–$$",
+      "alcohol": "Beer/wine",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_006",
+      "name": "Jericho Restaurant",
+      "cuisine": "Middle Eastern",
+      "neighborhood": "Merivale",
+      "address": "840 Merivale Rd, Ottawa, ON",
+      "website": "https://jerichorestaurant.com/contact",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_007",
+      "name": "El Mazaj",
+      "cuisine": "Lebanese",
+      "neighborhood": "Kanata",
+      "address": "4048 Carling Ave, Ottawa, ON",
+      "website": "https://www.elmazaj.ca",
+      "priceRange": "$$",
+      "alcohol": "Beer/wine",
+      "patio": "Small / seasonal"
+    },
+    {
+      "id": "rest_008",
+      "name": "African BBQ House",
+      "cuisine": "African",
+      "neighborhood": "Heron Gate",
+      "address": "1670 Heron Rd, Ottawa, ON",
+      "website": "https://www.africanbbqhouse.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_009",
+      "name": "Masakali",
+      "cuisine": "Indian",
+      "neighborhood": "Centretown",
+      "address": "296 Bank St, Ottawa, ON",
+      "website": "https://masakaliottawa.ca",
+      "priceRange": "$–$$",
+      "alcohol": "Beer/wine"
+    },
+    {
+      "id": "rest_010",
+      "name": "Turmeric Grove",
+      "cuisine": "Indian",
+      "neighborhood": "Westboro",
+      "address": "316 Richmond Rd, Ottawa, ON",
+      "website": "https://www.turmericgrove.com",
+      "priceRange": "$$",
+      "alcohol": "Full bar",
+      "patio": "Small / seasonal"
+    },
+    {
+      "id": "rest_011",
+      "name": "Fiesta & Tequila",
+      "cuisine": "Mexican",
+      "neighborhood": "Barrhaven",
+      "address": "3570 Strandherd Dr, Ottawa, ON",
+      "website": "https://www.fiestaandtequila.com",
+      "priceRange": "$$",
+      "alcohol": "Full bar",
+      "patio": "Small / seasonal"
+    },
+    {
+      "id": "rest_012",
+      "name": "La Bonita",
+      "cuisine": "Mexican",
+      "neighborhood": "Hintonburg",
+      "address": "1079 Wellington St W, Ottawa, ON",
+      "website": "https://labonita.ca",
+      "priceRange": "$$",
+      "alcohol": "Beer/cocktails",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_013",
+      "name": "Heart & Crown",
+      "cuisine": "Irish Pub",
+      "neighborhood": "ByWard Market",
+      "address": "67 Clarence St, Ottawa, ON",
+      "website": "https://heartandcrown.pub",
+      "priceRange": "$$",
+      "alcohol": "Full bar",
+      "patio": "Large"
+    },
+    {
+      "id": "rest_014",
+      "name": "O’Grady’s Outpost",
+      "cuisine": "Pub",
+      "neighborhood": "Nepean",
+      "address": "25 Tapiola Crescent, Ottawa, ON",
+      "website": "https://www.ogradysoutpost.ca",
+      "priceRange": "$$",
+      "alcohol": "Full bar",
+      "patio": "Medium / seasonal"
+    },
+    {
+      "id": "rest_015",
+      "name": "Fumoir Smokeshack",
+      "cuisine": "BBQ",
+      "neighborhood": "Gatineau",
+      "address": "75 Boulevard de la Gappe",
+      "website": "https://www.fumoirsmoqueshack.com",
+      "priceRange": "$$–$$$",
+      "alcohol": "Beer"
+    },
+    {
+      "id": "rest_016",
+      "name": "King Eddy",
+      "cuisine": "Burgers",
+      "neighborhood": "ByWard Market",
+      "address": "45 Clarence St, Ottawa, ON",
+      "website": "https://www.kingeddyburgers.com",
+      "priceRange": "$–$$",
+      "alcohol": "Beer/cocktails",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_017",
+      "name": "Mandarin Restaurant",
+      "cuisine": "Chinese",
+      "neighborhood": "Nepean",
+      "address": "290 W Hunt Club Rd, Ottawa, ON",
+      "website": "https://www.mandarinrestaurant.com",
+      "priceRange": "$$",
+      "alcohol": "Beer/wine"
+    },
+    {
+      "id": "rest_018",
+      "name": "Oriental House",
+      "cuisine": "Chinese",
+      "neighborhood": "Orleans",
+      "address": "5929 Jeanne D’Arc Blvd S, Ottawa, ON",
+      "website": "https://www.orientalhouse.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_019",
+      "name": "Asia Wok Orleans",
+      "cuisine": "Chinese",
+      "neighborhood": "Orleans",
+      "address": "210 Centrum Blvd, Ottawa, ON",
+      "website": "http://www.asiawokorleans.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_020",
+      "name": "Island Flava",
+      "cuisine": "Caribbean",
+      "neighborhood": "Heron Gate",
+      "address": "409 Heron Rd, Ottawa, ON",
+      "website": "http://www.islandflava.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_021",
+      "name": "Jumak",
+      "cuisine": "Korean",
+      "neighborhood": "ByWard Market",
+      "address": "109 Clarence St, Ottawa, ON",
+      "website": "https://www.jumakottawa.ca",
+      "priceRange": "$$",
+      "alcohol": "Soju/beer",
+      "patio": "Small / seasonal"
+    },
+    {
+      "id": "rest_022",
+      "name": "Kochu",
+      "cuisine": "Korean",
+      "neighborhood": "Sandy Hill",
+      "address": "464 Rideau St, Ottawa, ON",
+      "website": "http://www.kochu.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_023",
+      "name": "La Roma",
+      "cuisine": "Italian",
+      "neighborhood": "Little Italy",
+      "address": "430 Preston St, Ottawa, ON",
+      "website": "http://www.laromaottawa.com",
+      "priceRange": "$$–$$$",
+      "alcohol": "Wine list",
+      "patio": "Small / seasonal"
+    },
+    {
+      "id": "rest_024",
+      "name": "Giovanni’s",
+      "cuisine": "Italian",
+      "neighborhood": "Little Italy",
+      "address": "362 Preston St, Ottawa, ON",
+      "website": "https://www.giovannis-restaurant.com",
+      "priceRange": "$$$",
+      "alcohol": "Full bar + wine list",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_025",
+      "name": "Tayanti",
+      "cuisine": "Indian",
+      "neighborhood": "Barrhaven",
+      "address": "3777 Strandherd Dr, Ottawa, ON",
+      "website": "https://www.tayantirestaurants.com",
+      "priceRange": "$$"
+    },
+    {
+      "id": "rest_026",
+      "name": "Petit Peru",
+      "cuisine": "Peruvian",
+      "neighborhood": "Vanier",
+      "address": "381 Montreal Rd, Ottawa, ON",
+      "website": "http://www.petitperu.com",
+      "priceRange": "$$",
+      "alcohol": "Beer/wine",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_027",
+      "name": "Soul Stone",
+      "cuisine": "Asian Fusion",
+      "neighborhood": "Barrhaven",
+      "address": "3777 Strandherd Dr, Ottawa, ON",
+      "website": "http://www.soulstoneoriginal.com",
+      "priceRange": "$$"
+    },
+    {
+      "id": "rest_028",
+      "name": "Gokusen Sushi & Noodle Bar",
+      "cuisine": "Japanese",
+      "neighborhood": "Barrhaven",
+      "address": "3777 Strandherd Dr, Ottawa, ON",
+      "website": "https://gokusensushinoodlebar.com",
+      "priceRange": "$$"
+    },
+    {
+      "id": "rest_029",
+      "name": "Louis’ Pizza",
+      "cuisine": "Pizza",
+      "neighborhood": "Vanier",
+      "address": "181 McArthur Ave, Ottawa, ON",
+      "website": "http://www.louispizza.ca",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_030",
+      "name": "Gabriel Pizza",
+      "cuisine": "Pizza",
+      "neighborhood": "Multiple",
+      "address": "Various locations",
+      "website": "https://www.gabrielpizza.com",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_031",
+      "name": "Palermo’s",
+      "cuisine": "Italian",
+      "neighborhood": "Orleans",
+      "address": "2744 St Joseph Blvd, Ottawa, ON",
+      "website": "http://www.palermos.ca",
+      "priceRange": "$$",
+      "alcohol": "Wine/beer",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_032",
+      "name": "Monique Haitian Food",
+      "cuisine": "Haitian",
+      "neighborhood": "Vanier",
+      "address": "381 Montreal Rd, Ottawa, ON",
+      "website": "https://www.moniquehaitianfoodon.com",
+      "priceRange": "$–$$"
+    },
+    {
+      "id": "rest_033",
+      "name": "La Paladar Holguin Havana",
+      "cuisine": "Cuban",
+      "neighborhood": "Vanier",
+      "address": "381 Montreal Rd, Ottawa, ON",
+      "website": "https://www.lapaladarholguinhavanarestauranton.com",
+      "priceRange": "$$",
+      "alcohol": "Cocktails",
+      "patio": "Small"
+    },
+    {
+      "id": "rest_034",
+      "name": "Smash Daddy",
+      "cuisine": "Burgers",
+      "neighborhood": "Kanata",
+      "address": "700 March Rd, Ottawa, ON",
+      "website": "https://www.smashdaddy.ca",
+      "priceRange": "$–$$"
+    }
+  ]
+}
