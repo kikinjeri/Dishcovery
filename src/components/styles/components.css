@@ -247,3 +247,17 @@
   display: flex;
   gap: var(--space-md);
 }
+/* ----------------------------------------
+   Featured Dishes Section
+----------------------------------------- */
+
+.featured-section {
+  padding: var(--space-2xl) 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
