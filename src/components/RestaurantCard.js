@@ -17,7 +17,7 @@ export default function RestaurantCard({ restaurant }) {
             href={restaurant.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="button button-secondary"
+            className="button button-primary"
           >
             Visit Website
           </a>
@@ -26,7 +26,7 @@ export default function RestaurantCard({ restaurant }) {
             href={restaurant.map}
             target="_blank"
             rel="noopener noreferrer"
-            className="button button-outline"
+            className="button button-accent"
           >
             View on Map
           </a>

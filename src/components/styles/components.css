@@ -54,7 +54,7 @@
   font-weight: 500;
   font-size: var(--text-md);
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button-primary {
@@ -64,6 +64,7 @@
 
 .button-primary:hover {
   background: var(--color-primary-hover);
+  box-shadow: var(--shadow-sm);
 }
 
 .button-accent {
@@ -140,6 +141,15 @@
   color: var(--text-primary);
 }
 
+.section-subtitle {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ----------------------------------------
    Restaurant Grid
 ----------------------------------------- */
@@ -212,7 +222,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: var(--transition);
+  transition: 0.2s ease;
 }
 
 .restaurant-card:hover {
@@ -259,7 +269,7 @@
 }
 
 /* ----------------------------------------
-   Featured Dishes Section
+   Featured Dishes — FINAL FIX
 ----------------------------------------- */
 .featured-section {
   padding: var(--space-2xl) 0;
@@ -267,7 +277,49 @@
 
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: var(--space-xl);
   margin-top: var(--space-xl);
+}
+
+.dish-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.dish-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.97) contrast(1.1) saturate(1.1);
+}
+
+.dish-info {
+  padding: var(--space-lg);
+}
+
+.cuisine {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+}
+
+.description {
+  margin-top: var(--space-sm);
+  font-size: var(--text-md);
+  color: var(--text-secondary);
 }
