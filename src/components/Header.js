@@ -15,7 +15,7 @@ export default function Header() {
           <ul className="nav-list">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
-            <li><Link href="/featured">Featured Dishes</Link></li>
+            <li><Link href="/featured">Featured Restaurants</Link></li>
             <li><Link href="/recipes">Recipes</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
           </ul>
