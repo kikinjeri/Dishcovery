@@ -61,11 +61,13 @@ export default function FeaturedDishes() {
   ];
 
   return (
-    <section className="featured-dishes">
-      <h2>Featured Dishes</h2>
-      <p>Discover popular dishes across Ottawa — and where to find or cook them.</p>
+    <section className="featured-section">
+      <h2 className="section-title">Featured Dishes</h2>
+      <p className="section-subtitle">
+        Discover popular dishes across Ottawa — and where to find or cook them.
+      </p>
 
-      <div className="dishes-grid">
+      <div className="featured-grid">
         {dishes.map((dish) => (
           <a key={dish.slug} href={`/dishes/${dish.slug}`} className="dish-card">
             <img src={dish.image} alt={dish.name} className="dish-image" />
@@ -77,67 +79,6 @@ export default function FeaturedDishes() {
           </a>
         ))}
       </div>
-
-      <style jsx>{`
-        .featured-dishes {
-          padding: 2rem 0;
-        }
-
-        .dishes-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
-          margin-top: 1.5rem;
-        }
-
-        .dish-card {
-          background: #fff;
-          border-radius: 12px;
-          overflow: hidden;
-          text-decoration: none;
-          color: inherit;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-          transition: transform 0.15s ease;
-        }
-
-        .dish-card:hover {
-          transform: translateY(-4px);
-        }
-
-        .dish-image {
-          width: 100%;
-          height: 160px;
-          object-fit: cover;
-        }
-
-        .dish-info {
-          padding: 1rem;
-        }
-
-        .cuisine {
-          font-size: 0.85rem;
-          color: #777;
-          margin-top: 0.25rem;
-        }
-
-        .description {
-          margin-top: 0.5rem;
-          font-size: 0.9rem;
-          color: #555;
-        }
-
-        @media (max-width: 900px) {
-          .dishes-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        @media (max-width: 600px) {
-          .dishes-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </section>
   );
 }
