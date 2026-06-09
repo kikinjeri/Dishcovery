@@ -1,0 +1,78 @@
+/* ----------------------------------------
+   Design Tokens — Dishcovery
+   Cohesive with BizWebOpt, warmer + editorial
+----------------------------------------- */
+
+:root {
+  /* ----------------------------------------
+     Brand Colors
+  ----------------------------------------- */
+  --color-primary: #2A3A4A;          /* Deep slate-navy */
+  --color-primary-hover: #1F2C38;    /* Darker slate */
+  --color-accent: #F5A623;           /* Warm amber accent */
+
+  /* ----------------------------------------
+     Neutrals
+  ----------------------------------------- */
+  --background: #FAFAFA;
+  --surface: #FFFFFF;
+  --surface-alt: #F3F4F6;
+  --border: #E5E7EB;
+
+  /* ----------------------------------------
+     Text Colors
+  ----------------------------------------- */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+
+  /* ----------------------------------------
+     Semantic Colors
+  ----------------------------------------- */
+  --success: #0FA958;
+  --warning: #F59E0B;
+  --error: #DC2626;
+  --info: #2563EB;
+
+  /* ----------------------------------------
+     Spacing Scale
+     (4px baseline grid)
+  ----------------------------------------- */
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ----------------------------------------
+     Border Radius
+  ----------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------
+     Shadows
+  ----------------------------------------- */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg: 0 10px 24px rgba(0,0,0,0.12);
+
+  /* ----------------------------------------
+     Typography
+  ----------------------------------------- */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Georgia', serif;
+
+  /* Font sizes (fluid-friendly) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+}
