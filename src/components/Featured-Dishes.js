@@ -61,12 +61,14 @@ export default function FeaturedDishes() {
   ];
 
   return (
-    <section className="featured-dishes">
+    <section className="featured-section">
       <div className="container">
-        <h2>Featured Dishes</h2>
-        <p>Discover popular dishes across Ottawa — and where to find or cook them.</p>
+        <h2 className="section-title">Featured Dishes</h2>
+        <p className="section-subtitle">
+          Discover popular dishes across Ottawa — and where to find or cook them.
+        </p>
 
-        <div className="dishes-grid">
+        <div className="featured-grid">
           {dishes.map((dish) => (
             <a key={dish.slug} href={`/dishes/${dish.slug}`} className="dish-card">
               <img src={dish.image} alt={dish.name} className="dish-image" />
@@ -79,75 +81,6 @@ export default function FeaturedDishes() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .featured-dishes {
-          padding: var(--space-12) 0;
-        }
-
-        .dishes-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: var(--space-8);
-          margin-top: var(--space-8);
-        }
-
-        .dish-card {
-          background: var(--color-surface);
-          border-radius: var(--radius-md);
-          overflow: hidden;
-          text-decoration: none;
-          color: inherit;
-          box-shadow: var(--shadow-md);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .dish-card:hover {
-          transform: translateY(-6px);
-          box-shadow: var(--shadow-lg);
-        }
-
-        .dish-image {
-          width: 100%;
-          height: 180px;
-          object-fit: cover;
-          filter: brightness(0.97) contrast(1.1) saturate(1.1);
-        }
-
-        .dish-info {
-          padding: var(--space-6);
-        }
-
-        .cuisine {
-          font-size: 0.85rem;
-          color: var(--color-text-secondary);
-          margin-top: var(--space-2);
-        }
-
-        .description {
-          margin-top: var(--space-3);
-          font-size: 0.9rem;
-          color: var(--color-text-secondary);
-        }
-
-        @media (max-width: 900px) {
-          .dishes-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-6);
-          }
-        }
-
-        @media (max-width: 600px) {
-          .dishes-grid {
-            grid-template-columns: 1fr;
-            gap: var(--space-5);
-          }
-
-          .dish-image {
-            height: 200px;
-          }
-        }
-      `}</style>
     </section>
   );
 }
