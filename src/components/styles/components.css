@@ -7,19 +7,44 @@
    Header
 ----------------------------------------- */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-lg) 0;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  padding: var(--space-md) 0;
 }
 
-.header-logo {
-  font-size: var(--text-xl);
-  font-weight: 600;
-  color: var(--color-primary);
+/* Flex container that spaces logo left + nav right */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+/* Brand name styling */
+.header-logo {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px; /* premium SaaS feel */
+  margin-right: var(--space-xl); /* breathing room */
+}
+
+/* Navigation list */
+.nav-list {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: var(--text-primary);
+}
+
 
 .nav-list {
   display: flex;
@@ -247,6 +272,10 @@
   display: flex;
   gap: var(--space-md);
 }
+.restaurant-card.no-image {
+  padding-top: var(--space-lg);
+}
+
 /* ----------------------------------------
    Featured Dishes Section
 ----------------------------------------- */

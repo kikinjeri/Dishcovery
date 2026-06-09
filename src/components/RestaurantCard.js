@@ -1,16 +1,6 @@
-import Image from "next/image";
-
 export default function RestaurantCard({ restaurant }) {
   return (
-    <div className="restaurant-card">
-      <Image
-        src={restaurant.image}
-        alt={restaurant.name}
-        width={500}
-        height={350}
-        className="restaurant-card-img"
-      />
-
+    <div className="restaurant-card no-image">
       <div className="restaurant-card-body">
         <h3 className="restaurant-card-title">{restaurant.name}</h3>
 
