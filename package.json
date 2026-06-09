@@ -2,13 +2,18 @@
   "name": "dishcovery",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "import:glebe": "node import_glebe.js"
+    
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.107.0",
+    "dotenv": "^17.4.2",
     "next": "16.2.7",
     "react": "19.2.4",
     "react-dom": "19.2.4"
