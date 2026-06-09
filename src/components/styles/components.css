@@ -155,3 +155,43 @@
   font-size: var(--text-sm);
   border-top: 1px solid var(--border);
 }
+/* ----------------------------------------
+   Search Bar
+----------------------------------------- */
+.search-bar {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.search-input {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-md);
+}
+/* ----------------------------------------
+   Hero Section
+----------------------------------------- */
+.hero {
+  padding: var(--space-2xl) 0;
+  background: var(--surface-alt);
+  text-align: center;
+}
+
+.hero-title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
