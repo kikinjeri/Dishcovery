@@ -1,4 +1,4 @@
-// components/FeaturedDishes.js
+"use client";
 
 export default function FeaturedDishes() {
   const dishes = [
@@ -62,79 +62,89 @@ export default function FeaturedDishes() {
 
   return (
     <section className="featured-dishes">
-      <h2>Featured Dishes</h2>
-      <p>Discover popular dishes across Ottawa — and where to find or cook them.</p>
+      <div className="container">
+        <h2>Featured Dishes</h2>
+        <p>Discover popular dishes across Ottawa — and where to find or cook them.</p>
 
-      <div className="dishes-grid">
-        {dishes.map((dish) => (
-          <a key={dish.slug} href={`/dishes/${dish.slug}`} className="dish-card">
-            <img src={dish.image} alt={dish.name} className="dish-image" />
-            <div className="dish-info">
-              <h3>{dish.name}</h3>
-              <p className="cuisine">{dish.cuisine}</p>
-              <p className="description">{dish.description}</p>
-            </div>
-          </a>
-        ))}
+        <div className="dishes-grid">
+          {dishes.map((dish) => (
+            <a key={dish.slug} href={`/dishes/${dish.slug}`} className="dish-card">
+              <img src={dish.image} alt={dish.name} className="dish-image" />
+              <div className="dish-info">
+                <h3>{dish.name}</h3>
+                <p className="cuisine">{dish.cuisine}</p>
+                <p className="description">{dish.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
 
       <style jsx>{`
         .featured-dishes {
-          padding: 2rem 0;
+          padding: var(--space-12) 0;
         }
 
         .dishes-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
-          margin-top: 1.5rem;
+          gap: var(--space-8);
+          margin-top: var(--space-8);
         }
 
         .dish-card {
-          background: #fff;
-          border-radius: 12px;
+          background: var(--color-surface);
+          border-radius: var(--radius-md);
           overflow: hidden;
           text-decoration: none;
           color: inherit;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-          transition: transform 0.15s ease;
+          box-shadow: var(--shadow-md);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .dish-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(-6px);
+          box-shadow: var(--shadow-lg);
         }
 
         .dish-image {
           width: 100%;
-          height: 160px;
+          height: 180px;
           object-fit: cover;
+          filter: brightness(0.97) contrast(1.1) saturate(1.1);
         }
 
         .dish-info {
-          padding: 1rem;
+          padding: var(--space-6);
         }
 
         .cuisine {
           font-size: 0.85rem;
-          color: #777;
-          margin-top: 0.25rem;
+          color: var(--color-text-secondary);
+          margin-top: var(--space-2);
         }
 
         .description {
-          margin-top: 0.5rem;
+          margin-top: var(--space-3);
           font-size: 0.9rem;
-          color: #555;
+          color: var(--color-text-secondary);
         }
 
         @media (max-width: 900px) {
           .dishes-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-6);
           }
         }
 
         @media (max-width: 600px) {
           .dishes-grid {
             grid-template-columns: 1fr;
+            gap: var(--space-5);
+          }
+
+          .dish-image {
+            height: 200px;
           }
         }
       `}</style>

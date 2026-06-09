@@ -1,94 +1,87 @@
-/* Import global design layers */
-@import '../styles/reset.css';
-@import '../styles/tokens.css';
-@import '../styles/mixins.css';
-@import '../components/styles/components.css';
+/* ------------------------------
+   GLOBAL DESIGN TOKENS
+--------------------------------*/
 
-/* ----------------------------------------
-   Global Base Styles
------------------------------------------ */
+:root {
+  /* Colors */
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b6b6b;
+  --color-border: rgba(0,0,0,0.08);
 
-html {
-  font-family: var(--font-sans);
-  color: var(--text-primary);
-  background: var(--background);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  /* Brand accents (Dishcovery + BizWebOpt cohesive) */
+  --brand-primary: #2a7de1;
+  --brand-secondary: #f97316;
+  --brand-muted: #e5e7eb;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 6px 18px rgba(0,0,0,0.12);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
 }
 
-body {
+/* ------------------------------
+   GLOBAL RESET
+--------------------------------*/
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
   line-height: 1.6;
-  background: var(--background);
 }
 
-/* ----------------------------------------
-   Typography Defaults
------------------------------------------ */
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 var(--space-md);
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-p {
-  margin: 0 0 var(--space-md);
-  color: var(--text-secondary);
-}
-
-/* ----------------------------------------
-   Links
------------------------------------------ */
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover,
-a:focus {
-  color: var(--color-primary-hover);
-  outline: none;
-}
-
-/* ----------------------------------------
-   Layout Elements
------------------------------------------ */
-
-main {
-  display: block;
-  padding: var(--space-lg) 0;
-}
-
-section {
-  margin-bottom: var(--space-xl);
-}
-
-/* ----------------------------------------
-   Accessibility
------------------------------------------ */
-
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ----------------------------------------
-   Utility Classes (Global)
------------------------------------------ */
+/* ------------------------------
+   GLOBAL LAYOUT
+--------------------------------*/
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-6);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
+}
+
+p {
+  color: var(--color-text-secondary);
 }
