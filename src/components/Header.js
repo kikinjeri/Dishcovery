@@ -6,7 +6,7 @@ export default function Header() {
       <div className="container header-content">
 
         <Link href="/" className="header-logo">
-          Dishcovery
+          Dishcover
         </Link>
 
         <nav aria-label="Main navigation">

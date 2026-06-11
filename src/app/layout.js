@@ -4,7 +4,7 @@ import "../components/styles/components.css";
 import Header from "@/components/Header";
 
 export const metadata = {
-  title: "Dishcovery",
+  title: "Dishcover",
   description: "Discover the best dishes in your city",
 };
 

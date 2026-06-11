@@ -65,7 +65,7 @@ export default function FeaturedDishes() {
       <div className="container">
         <h2 className="section-title">Featured Dishes</h2>
         <p className="section-subtitle">
-          Discover popular dishes across Ottawa — and where to find or cook them.
+          Taste of Ottawa: where to eat each dish — or how to make it at home.
         </p>
 
         <div className="featured-grid">
