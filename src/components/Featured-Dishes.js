@@ -3,6 +3,14 @@
 import { dishes } from "@/data/dishes";
 
 export default function FeaturedDishes() {
+  // Filter dishes that actually have images in /public/images/dishes
+  const dishesWithImages = dishes.filter((dish) => dish.image);
+
+  // Shuffle and pick 4
+  const featured = [...dishesWithImages]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 4);
+
   return (
     <section className="featured-section">
       <div className="container">
@@ -12,11 +20,13 @@ export default function FeaturedDishes() {
         </p>
 
         <div className="featured-grid">
-          {dishes.map((dish) => (
+          {featured.map((dish) => (
             <a key={dish.slug} href={`/dishes/${dish.slug}`} className="dish-card">
-              {dish.image && (
-                <img src={dish.image} alt={dish.name} className="dish-image" />
-              )}
+              <img
+                src={dish.image}
+                alt={dish.name}
+                className="dish-image"
+              />
 
               <div className="dish-info">
                 <h3>{dish.name}</h3>
