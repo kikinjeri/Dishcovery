@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import fetch from "node-fetch";
+import "dotenv/config";
 
 // -------------------------------
 // CONFIG
@@ -14,31 +15,58 @@ const TYPE_MAP = {
   supermarket: "supermarket",
   greengrocer: "greengrocer",
   marketplace: "marketplace",
-  "asian": "ethnic_market",
-  "ethnic": "ethnic_market",
-  "butcher": "specialty",
-  "cheese": "specialty",
-  "wholesale": "wholesale",
+  asian: "ethnic_market",
+  ethnic: "ethnic_market",
+  butcher: "specialty",
+  cheese: "specialty",
+  wholesale: "wholesale",
 };
 
 // -------------------------------
-// HELPER: Compute centroid of polygon
+// HELPER: Compute centroid for ANY geometry
 // -------------------------------
-function computeCentroid(coords) {
-  let totalX = 0;
-  let totalY = 0;
-  let count = 0;
+function computeCentroid(geometry) {
+  const { type, coordinates } = geometry;
 
-  coords[0].forEach(([lng, lat]) => {
-    totalX += lng;
-    totalY += lat;
-    count++;
-  });
+  // POINT: [lng, lat]
+  if (type === "Point") {
+    return { lat: coordinates[1], lng: coordinates[0] };
+  }
 
-  return {
-    lat: totalY / count,
-    lng: totalX / count,
-  };
+  // POLYGON: [ [ [lng, lat], ... ] ]
+  if (type === "Polygon") {
+    const ring = coordinates[0];
+    let totalX = 0, totalY = 0;
+
+    ring.forEach(([lng, lat]) => {
+      totalX += lng;
+      totalY += lat;
+    });
+
+    return {
+      lat: totalY / ring.length,
+      lng: totalX / ring.length,
+    };
+  }
+
+  // MULTIPOLYGON: [ [ [ [lng, lat], ... ] ] ]
+  if (type === "MultiPolygon") {
+    const ring = coordinates[0][0];
+    let totalX = 0, totalY = 0;
+
+    ring.forEach(([lng, lat]) => {
+      totalX += lng;
+      totalY += lat;
+    });
+
+    return {
+      lat: totalY / ring.length,
+      lng: totalX / ring.length,
+    };
+  }
+
+  console.warn("Unknown geometry type:", type);
+  return { lat: null, lng: null };
 }
 
 // -------------------------------
@@ -70,8 +98,8 @@ async function importStores() {
 
     if (!props.name) continue;
 
-    // Compute centroid
-    const centroid = computeCentroid(geom.coordinates);
+    // Compute centroid safely
+    const centroid = computeCentroid(geom);
 
     // Build address
     const address = [
@@ -107,11 +135,11 @@ async function importStores() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "apikey": SUPABASE_SERVICE_KEY,
-        "Authorization": `Bearer ${SUPABASE_SERVICE_KEY}`,
-        "Prefer": "return=minimal"
+        apikey: SUPABASE_SERVICE_KEY,
+        Authorization: `Bearer ${SUPABASE_SERVICE_KEY}`,
+        Prefer: "return=minimal",
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
   }
 
