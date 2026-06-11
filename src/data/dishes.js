@@ -1,0 +1,23 @@
+export const dishes = [
+  { name: "Poutine", cuisine: "Canadian", slug: "poutine" },
+  { name: "Beavertail", cuisine: "Canadian", slug: "beavertail" },
+  { name: "Butter Chicken", cuisine: "Indian", slug: "butter-chicken" },
+  { name: "Shawarma", cuisine: "Middle Eastern", slug: "shawarma" },
+  { name: "Ramen", cuisine: "Japanese", slug: "ramen" },
+  { name: "Tacos al Pastor", cuisine: "Mexican", slug: "tacos-al-pastor" },
+  { name: "Jerk Chicken", cuisine: "Caribbean", slug: "jerk-chicken" },
+  { name: "Pho", cuisine: "Vietnamese", slug: "pho" },
+  { name: "Sushi Rolls", cuisine: "Japanese", slug: "sushi-rolls" },
+  { name: "Biryani", cuisine: "Indian", slug: "biryani" },
+  { name: "Korean Fried Chicken", cuisine: "Korean", slug: "korean-fried-chicken" },
+  { name: "Pad Thai", cuisine: "Thai", slug: "pad-thai" },
+  { name: "Falafel Wrap", cuisine: "Middle Eastern", slug: "falafel-wrap" },
+  { name: "Smash Burger", cuisine: "American", slug: "smash-burger" },
+  { name: "Tonkatsu", cuisine: "Japanese", slug: "tonkatsu" },
+  { name: "General Tao Chicken", cuisine: "Chinese-Canadian", slug: "general-tao-chicken" },
+  { name: "Bulgogi", cuisine: "Korean", slug: "bulgogi" },
+  { name: "Fish and Chips", cuisine: "British", slug: "fish-and-chips" },
+  { name: "Hummus & Pita", cuisine: "Middle Eastern", slug: "hummus-and-pita" },
+  { name: "Mac and Cheese", cuisine: "American", slug: "mac-and-cheese" },
+];
+
