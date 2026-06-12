@@ -1,11 +1,9 @@
 import "./globals.css";
-import "../components/styles/components.css";
-
-import Header from "@/components/Header";
+import Header from "../components/Header";
 
 export const metadata = {
-  title: "Dishcover",
-  description: "Discover the best dishes in your city",
+  title: "Ottawa‑Eats",
+  description: "Discover Ottawa’s favourite dishes — cook it or order it.",
 };
 
 export default function RootLayout({ children }) {
@@ -13,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );

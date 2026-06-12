@@ -51,7 +51,6 @@ export default function FeaturedDishes() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    // Hydration-safe randomization
     const shuffled = [...allDishes]
       .sort(() => Math.random() - 0.5)
       .slice(0, 4);
@@ -63,7 +62,7 @@ export default function FeaturedDishes() {
     <section className="featured-section luxe-section">
       <div className="container">
 
-        <h2 className="section-title luxe-title">Discover Ottawa's favourtite dishes.</h2>
+        <h2 className="section-title luxe-title">Discover Ottawa's favourite dishes.</h2>
 
         <p className="section-subtitle luxe-subtitle">
           <br />
