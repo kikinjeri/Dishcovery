@@ -1,107 +1,257 @@
-"use client";
+import Image from "next/image";
+import Searchbar from "@/components/Searchbar";
+import "@/components/styles/components.css";
+
+
+export const metadata = {
+  title: "Ottawa‑Eats | Discover Ottawa’s Favourite Dishes",
+  description:
+    "Discover Ottawa’s favourite dishes, recipes, and local restaurants. Search by craving and see where to get it or how to make it.",
+};
+
+const popularDishes = [
+  {
+    name: "Poutine",
+    image: "/images/dishes/poutine.jpg",
+    description: "Ottawa’s late‑night classic.",
+  },
+  {
+    name: "Shawarma",
+    image: "/images/dishes/shawarma.jpg",
+    description: "Bank Street’s favourite wrap.",
+  },
+  {
+    name: "Ramen",
+    image: "/images/dishes/ramen.jpg",
+    description: "Slow‑simmered broth and noodles.",
+  },
+  {
+    name: "Tacos al Pastor",
+    image: "/images/dishes/tacos-al-pastor.jpg",
+    description: "Marinated pork, pineapple, cilantro.",
+  },
+];
+
+const featuredRestaurants = [
+  {
+    name: "Shawarma Palace",
+    url: "https://shawarmapalace.ca",
+  },
+  {
+    name: "El Camino",
+    url: "https://eatelcamino.com",
+  },
+  {
+    name: "Sansotei Ramen",
+    url: "https://sansotei.com",
+  },
+  {
+    name: "La Noodle",
+    url: "https://lanoodle.ca",
+  },
+  {
+    name: "The Smoque Shack",
+    url: "https://thesmoqueshack.com",
+  },
+];
+
+function getJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Ottawa‑Eats",
+    url: "https://ottawa-eats.example.com",
+    description:
+      "Discover Ottawa’s favourite dishes, recipes, and local restaurants. Search by craving and see where to get it or how to make it.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://ottawa-eats.example.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
 
 export default function HomePage() {
   return (
-    <main className="oe-home">
+    <>
+      {/* SEO: JSON‑LD */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd()) }}
+      />
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="nav-left">
-          <div className="nav-logo">
-            <span>Ottawa</span>
-            <span>Eats</span>
+      <main className="oe-home" role="main">
+        {/* 1. HERO */}
+        <section
+          id="hero"
+          className="hero"
+          aria-labelledby="hero-heading"
+          aria-describedby="hero-subtitle"
+        >
+          <div className="container hero-content">
+            <div className="hero-copy">
+              <h1 id="hero-heading" className="hero-title">
+                Discover Ottawa’s favourite dishes.
+              </h1>
+
+              <p id="hero-subtitle" className="hero-subtitle">
+                See where to get it or how to make your favorite local eats.
+              </p>
+
+              <Searchbar />
+
+              <p className="hero-microcopy">
+                Try “ramen”, “shawarma”, “Little Italy”, “vegan”, “poutine”…
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="nav-links">
-            <a href="/">Home</a>
-            <a href="#featured">Featured Dishes</a>
-            <a href="/restaurants">Restaurants</a>
+        {/* 2. POPULAR DISHES */}
+        <section
+          id="featured-dishes"
+          className="featured-section"
+          aria-labelledby="featured-dishes-heading"
+        >
+          <div className="container">
+            <h2 id="featured-dishes-heading" className="section-title">
+              Popular in Ottawa right now
+            </h2>
+
+            <p className="section-subtitle">
+              Explore iconic dishes and choose where to get them or how to make
+              them.
+            </p>
+
+            <div
+              className="featured-grid"
+              style={{
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              }}
+            >
+              {popularDishes.map((dish) => (
+                <article
+                  key={dish.name}
+                  className="dish-card"
+                  aria-label={dish.name}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Image
+                    src={dish.image}
+                    alt={dish.name}
+                    width={400}
+                    height={240}
+                    className="dish-image"
+                  />
+
+                  <div
+                    className="dish-info"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      flexGrow: 1,
+                    }}
+                  >
+                    <h3>{dish.name}</h3>
+                    <p className="description">{dish.description}</p>
+
+                    <div
+                      className="dish-actions"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.5rem",
+                        marginTop: "auto",
+                      }}
+                      aria-label={`Actions for ${dish.name}`}
+                    >
+                      <a
+                        href={`/where-to-get-it?dish=${encodeURIComponent(
+                          dish.name
+                        )}`}
+                        className="button button-primary"
+                        style={{
+                          textAlign: "center",
+                          fontSize: "0.9rem",
+                          padding: "0.5rem 0.75rem",
+                        }}
+                      >
+                        Where to get it
+                      </a>
+                      <a
+                        href={`/recipes?dish=${encodeURIComponent(dish.name)}`}
+                        className="button button-secondary"
+                        style={{
+                          textAlign: "center",
+                          fontSize: "0.9rem",
+                          padding: "0.5rem 0.75rem",
+                        }}
+                      >
+                        How to make it
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </nav>
+        </section>
 
-      {/* SEARCH BAR */}
-      <section className="oe-search-section">
-        <div className="oe-search-container">
-          <input
-            type="text"
-            placeholder="Search for a dish, cuisine, or craving…"
-            className="oe-search"
-          />
-        </div>
-      </section>
+        {/* 3. FEATURED RESTAURANTS */}
+        <section
+          id="featured-restaurants"
+          className="featured-section"
+          aria-labelledby="featured-restaurants-heading"
+        >
+          <div className="container">
+            <h2 id="featured-restaurants-heading" className="section-title">
+              Explore how local Ottawa restaurants craft dishes like these,
+              including:
+            </h2>
 
-      {/* HERO */}
-      <section className="oe-simple-hero">
-        <h1 className="oe-logo">Ottawa‑Eats</h1>
-
-        <h2 className="oe-simple-title">
-          Discover Ottawa’s favourite dishes.
-        </h2>
-
-        <p className="oe-simple-sub">
-          From shawarma on Bank Street to ramen in Centretown, Ottawa‑Eats
-          connects you to dishes, recipes, and local spots.
-        </p>
-
-        <div className="oe-simple-cta">
-          <button className="oe-btn oe-btn-primary">Cook it</button>
-          <button className="oe-btn oe-btn-secondary">Order it</button>
-        </div>
-      </section>
-
-      {/* FEATURED DISHES */}
-      <section id="featured" className="oe-featured">
-        <div className="oe-featured-inner">
-
-          <h3 className="oe-section-title">Featured Dishes</h3>
-
-          <div className="oe-featured-grid">
-
-            <div className="oe-dish-card">
-              <img src="/images/dishes/shawarma.jpg" alt="Shawarma" />
-              <h4>Chicken Shawarma</h4>
-              <p className="oe-card-meta">Middle Eastern</p>
-              <div className="oe-card-actions">
-                <button className="oe-pill-btn">Cook it</button>
-                <button className="oe-pill-btn">Order it</button>
-              </div>
-            </div>
-
-            <div className="oe-dish-card">
-              <img src="/images/dishes/ramen.jpg" alt="Ramen" />
-              <h4>Tonkotsu Ramen</h4>
-              <p className="oe-card-meta">Japanese</p>
-              <div className="oe-card-actions">
-                <button className="oe-pill-btn">Cook it</button>
-                <button className="oe-pill-btn">Order it</button>
-              </div>
-            </div>
-
-            <div className="oe-dish-card">
-              <img src="/images/dishes/poutine.jpg" alt="Poutine" />
-              <h4>Classic Poutine</h4>
-              <p className="oe-card-meta">Canadian</p>
-              <div className="oe-card-actions">
-                <button className="oe-pill-btn">Cook it</button>
-                <button className="oe-pill-btn">Order it</button>
-              </div>
-            </div>
-
-            <div className="oe-dish-card">
-              <img src="/images/dishes/butter-chicken.jpg" alt="Butter Chicken" />
-              <h4>Butter Chicken</h4>
-              <p className="oe-card-meta">Indian</p>
-              <div className="oe-card-actions">
-                <button className="oe-pill-btn">Cook it</button>
-                <button className="oe-pill-btn">Order it</button>
-              </div>
-            </div>
-
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                marginTop: "16px",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.75rem 1.5rem",
+              }}
+            >
+              {featuredRestaurants.map((r) => (
+                <li key={r.name}>
+                  <a
+                    href={r.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cuisine-link"
+                    style={{ fontWeight: "600" }}
+                  >
+                    {r.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
+        {/* 4. IDENTITY STRIP */}
+        <section className="identity-strip">
+          <div className="container">
+            <p>Made in Ottawa 🇨🇦 for food lovers everywhere.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <p>Ottawa‑Eats · © {new Date().getFullYear()}</p>
+      </footer>
+    </>
   );
 }

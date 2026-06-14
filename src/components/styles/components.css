@@ -6,25 +6,63 @@
 /* ----------------------------------------
    Header
 ----------------------------------------- */
-.header {
+/* ----------------------------------------------------
+   NAVBAR — Restored + Cleaned
+----------------------------------------------------- */
+
+.navbar {
+  width: 100%;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: var(--space-md) 0;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-.header-content {
+.nav-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--space-xl);
 }
 
-.header-logo {
+/* Hybrid serif + sans logo */
+.nav-logo {
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.5px;
-  margin-right: var(--space-xl);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
 }
+
+.nav-logo span:first-child {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  line-height: 1;
+}
+
+.nav-logo span:last-child {
+  font-family: var(--font-sans);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--oe-red);
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
 
 .nav-list {
   display: flex;
@@ -41,6 +79,32 @@
 .nav-list a:hover {
   color: var(--text-primary);
 }
+.hero {
+  padding: var(--space-md) 0 var(--space-sm);
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+  text-align: center;
+  color: #f9fafb;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-md);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  text-align: center;
+}
+
 
 /* ----------------------------------------
    Buttons
@@ -272,8 +336,9 @@
    Featured Dishes — FINAL FIX
 ----------------------------------------- */
 .featured-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0 var(--space-lg);
 }
+
 
 .featured-grid {
   display: grid;
